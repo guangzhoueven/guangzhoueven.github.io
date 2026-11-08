@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <author>
+    <name>guangzhou_even</name>
+  </author>
+  <generator uri="https://hexo.io/">Hexo</generator>
+  <id>https://blog.gzeven.cc.cd/</id>
+  <link href="https://blog.gzeven.cc.cd/" rel="alternate"/>
+  <link href="https://blog.gzeven.cc.cd/atom.xml" rel="self"/>
+  <rights>All rights reserved 2026, guangzhou_even</rights>
+  <subtitle>guangzhou_even的博客</subtitle>
+  <title>guangzhou_even</title>
+  <updated>2026-11-08T05:01:27.769Z</updated>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <id>https://blog.gzeven.cc.cd/posts/33641/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/33641/"/>
+    <published>2026-11-08T05:01:27.769Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>博客使用指南</title>
+    <updated>2026-11-08T05:01:27.769Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="专项复习" scheme="https://blog.gzeven.cc.cd/categories/%E4%B8%93%E9%A1%B9%E5%A4%8D%E4%B9%A0/"/>
+    <category term="英语" scheme="https://blog.gzeven.cc.cd/tags/%E8%8B%B1%E8%AF%AD/"/>
+    <id>https://blog.gzeven.cc.cd/posts/14549/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/14549/"/>
+    <published>2026-11-08T05:01:27.769Z</published>
+    <summary>Here's something encrypted, password is required to continue reading.</summary>
+    <title>英语考点全解析</title>
+    <updated>2025-01-10T18:00:00.000Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <id>https://blog.gzeven.cc.cd/posts/16107/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/16107/"/>
+    <published>2026-11-08T05:01:27.766Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>Hello World</title>
+    <updated>2026-11-08T05:01:27.766Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/55046/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/55046/"/>
+    <published>2026-11-08T05:01:27.765Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ 动态规划</title>
+    <updated>2026-11-08T05:01:27.765Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/44345/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/44345/"/>
+    <published>2026-11-08T05:01:27.765Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ 最大子矩形问题</title>
+    <updated>2026-11-08T05:01:27.765Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/60655/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/60655/"/>
+    <published>2026-11-08T05:01:27.765Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ 滑动窗口</title>
+    <updated>2026-11-08T05:01:27.765Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="英语" scheme="https://blog.gzeven.cc.cd/categories/%E8%8B%B1%E8%AF%AD/"/>
+    <category term="英语" scheme="https://blog.gzeven.cc.cd/tags/%E8%8B%B1%E8%AF%AD/"/>
+    <category term="中考" scheme="https://blog.gzeven.cc.cd/tags/%E4%B8%AD%E8%80%83/"/>
+    <id>https://blog.gzeven.cc.cd/posts/4996/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/4996/"/>
+    <published>2026-05-23T21:14:18.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>中考英语 as+…+as 用法大全</title>
+    <updated>2026-11-08T05:01:27.769Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="数学" scheme="https://blog.gzeven.cc.cd/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="初中" scheme="https://blog.gzeven.cc.cd/tags/%E5%88%9D%E4%B8%AD/"/>
+    <id>https://blog.gzeven.cc.cd/posts/18472/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/18472/"/>
+    <published>2026-04-27T22:59:33.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>手工计算平方根</title>
+    <updated>2026-11-08T05:01:27.769Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="数学" scheme="https://blog.gzeven.cc.cd/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="初中" scheme="https://blog.gzeven.cc.cd/tags/%E5%88%9D%E4%B8%AD/"/>
+    <id>https://blog.gzeven.cc.cd/posts/21385/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/21385/"/>
+    <published>2026-04-27T22:55:23.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>三角函数</title>
+    <updated>2026-11-08T05:01:27.769Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/27584/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/27584/"/>
+    <published>2026-04-13T20:22:00.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ DFS与BFS</title>
+    <updated>2026-11-08T05:01:27.765Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/30389/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/30389/"/>
+    <published>2025-11-15T14:10:37.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ cout格式化输出指南</title>
+    <updated>2026-11-08T05:01:27.765Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/7983/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/7983/"/>
+    <published>2025-11-15T13:55:35.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ 赛制指南</title>
+    <updated>2026-11-08T05:01:27.766Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="阅读笔记" scheme="https://blog.gzeven.cc.cd/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
+    <id>https://blog.gzeven.cc.cd/posts/63970/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/63970/"/>
+    <published>2025-11-11T22:44:58.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>《童年》阅读笔记</title>
+    <updated>2026-11-08T05:01:27.767Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/55617/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/55617/"/>
+    <published>2025-11-09T23:00:32.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ 贡献法与单调栈</title>
+    <updated>2026-11-08T05:01:27.766Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="数学" scheme="https://blog.gzeven.cc.cd/categories/%E6%95%B0%E5%AD%A6/"/>
+    <category term="奥数" scheme="https://blog.gzeven.cc.cd/tags/%E5%A5%A5%E6%95%B0/"/>
+    <category term="博弈" scheme="https://blog.gzeven.cc.cd/tags/%E5%8D%9A%E5%BC%88/"/>
+    <id>https://blog.gzeven.cc.cd/posts/41845/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/41845/"/>
+    <published>2025-10-12T19:04:33.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>数学博弈</title>
+    <updated>2026-11-08T05:01:27.769Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/20400/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/20400/"/>
+    <published>2025-10-04T13:54:42.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ Lambda表达式的运用</title>
+    <updated>2026-11-08T05:01:27.765Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/17683/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/17683/"/>
+    <published>2025-09-18T00:00:00.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ 线段树指南</title>
+    <updated>2026-11-08T05:01:27.765Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/25773/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/25773/"/>
+    <published>2025-09-07T00:00:00.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ Freopen使用指南</title>
+    <updated>2026-11-08T05:01:27.765Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>guangzhou_even</name>
+    </author>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/categories/C/"/>
+    <category term="C++" scheme="https://blog.gzeven.cc.cd/tags/C/"/>
+    <category term="编程" scheme="https://blog.gzeven.cc.cd/tags/%E7%BC%96%E7%A8%8B/"/>
+    <id>https://blog.gzeven.cc.cd/posts/1935/</id>
+    <link href="https://blog.gzeven.cc.cd/posts/1935/"/>
+    <published>2025-09-07T00:00:00.000Z</published>
+    <summary>
+      <![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js"]]>
+    </summary>
+    <title>C++ 原根知识详解</title>
+    <updated>2026-11-08T05:01:27.765Z</updated>
+  </entry>
+</feed>

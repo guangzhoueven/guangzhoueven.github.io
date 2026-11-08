@@ -1,0 +1,254 @@
+/* ---- 变量映射：本文件沿用 Solitude 的 --efu-* 变量名，
+   安知鱼主题定义的是 --anzhiyu-* 前缀，此处做别名映射 ---- */
+:root {
+  --efu-main: var(--anzhiyu-main);
+  --efu-theme: var(--anzhiyu-theme);
+  --efu-fontcolor: var(--anzhiyu-fontcolor);
+  --efu-secondtext: var(--anzhiyu-secondtext);
+  --efu-card-bg: var(--anzhiyu-card-bg);
+  --efu-main-op-deep: var(--anzhiyu-main-op-deep);
+  --efu-main-op: var(--anzhiyu-main-op);
+  --efu-main-op-light: var(--anzhiyu-theme-op);
+}
+
+.card-widget {
+  padding: 10px !important;
+  max-height: calc(100vh - 100px);
+  position: relative;
+}
+
+.card-times a,
+.card-times div {
+  color: var(--efu-fontcolor);
+}
+
+#card-widget-calendar .item-content {
+  display: flex;
+}
+
+#calendar-area-left {
+  width: 48%;
+}
+
+#calendar-area-right {
+  width: 52%;
+}
+
+#calendar-area-left,
+#calendar-area-right {
+  height: 100%;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#calendar-week {
+  height: 1.2rem;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  align-items: center;
+  display: flex;
+}
+
+/* 修复：大日期/阳历/农历原先按整个卡片 absolute 定位，
+   会与「第X周 周X」文字重叠；改为正常流式排列。
+   solar/lunar 加 nowrap 防止「天」折行盖住下一行 */
+#calendar-date {
+  height: auto;
+  line-height: 1.2;
+  font-size: 64px;
+  letter-spacing: 3px;
+  color: var(--efu-main);
+  font-weight: 700;
+  align-items: center;
+  display: flex;
+  margin: 3px 0 5px;
+}
+
+#calendar-lunar,
+#calendar-solar {
+  height: auto;
+  font-size: 12px;
+  white-space: nowrap;
+  align-items: center;
+  display: flex;
+}
+
+#calendar-lunar {
+  color: var(--efu-secondtext);
+}
+
+#calendar-main a {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  font-size: 12px;
+  line-height: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#calendar-main a.now {
+  background: var(--efu-main);
+  color: var(--efu-card-bg);
+}
+
+#calendar-main .calendar-rh a {
+  color: var(--efu-secondtext);
+}
+
+.calendar-r0,
+.calendar-r1,
+.calendar-r2,
+.calendar-r3,
+.calendar-r4,
+.calendar-r5,
+.calendar-rh {
+  height: 1.2rem;
+  display: flex;
+}
+
+.calendar-d0,
+.calendar-d1,
+.calendar-d2,
+.calendar-d3,
+.calendar-d4,
+.calendar-d5,
+.calendar-d6 {
+  width: calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card-widget-schedule .item-content {
+  display: flex;
+}
+
+#schedule-area-left,
+#schedule-area-right {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#schedule-area-left {
+  width: 30%;
+}
+
+#schedule-area-right {
+  width: 70%;
+  padding: 0 5px;
+}
+
+.schedule-r0,
+.schedule-r1,
+.schedule-r2 {
+  height: 2rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.schedule-d0 {
+  width: 30px;
+  margin-right: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.schedule-d1 {
+  width: calc(100% - 35px);
+  height: 1.5rem;
+  align-items: center;
+  display: flex;
+}
+
+progress::-webkit-progress-bar {
+  background: linear-gradient(
+    to right,
+    var(--efu-main-op-deep),
+    var(--efu-main-op),
+    var(--efu-main-op-light)
+  );
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* 关键：原生 progress 外观会忽略进度条伪元素的自定义背景，必须关掉 */
+progress {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+progress::-webkit-progress-value {
+  background: var(--efu-main);
+  border-radius: 5px;
+}
+
+.aside-span1,
+.aside-span2 {
+  height: 1rem;
+  font-size: 12px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  position: absolute;
+}
+
+.aside-span1 {
+  margin-left: 5px;
+}
+
+.aside-span2 {
+  right: 20px;
+  color: var(--efu-secondtext);
+}
+
+.aside-span2 a {
+  margin: 0 3px;
+}
+
+#pBar_month,
+#pBar_week,
+#pBar_year {
+  width: 100%;
+  border-radius: 5px;
+  height: 100%;
+}
+
+#schedule-date,
+#schedule-days,
+#schedule-title {
+  display: flex;
+  align-items: center;
+}
+
+#schedule-title {
+  height: 25px;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+#schedule-days {
+  height: 40px;
+  line-height: 1;
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--efu-main);
+}
+
+#schedule-date {
+  height: 20px;
+  line-height: 1;
+  font-size: 12px;
+  color: var(--efu-secondtext);
+}

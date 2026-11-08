@@ -1,0 +1,177 @@
+/* 鼠标样式 */
+#cursor {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  /* 这里改变跟随的底色 */
+/*  background: rgb(57, 197, 187);*/
+  background: rgb(220, 28, 45);
+  border-radius: 8px;
+  opacity: 0.25;
+  z-index: 10086;
+  pointer-events: none;
+  transition: 0.2s ease-in-out;
+  transition-property: background, opacity, transform;
+}
+ 
+#cursor.hidden {
+  opacity: 0;
+}
+ 
+#cursor.hover {
+  opacity: 0.1;
+  transform: scale(2.5);
+  -webkit-transform: scale(2.5);
+  -moz-transform: scale(2.5);
+  -ms-transform: scale(2.5);
+  -o-transform: scale(2.5);
+}
+ 
+#cursor.active {
+  opacity: 0.5;
+  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -o-transform: scale(0.5);
+}
+
+
+ul:has(input[type="checkbox"]) {
+  list-style-type: none;
+}
+
+[type="checkbox"] {
+  /* 调整位置 */
+  margin: 0 5px 0 -1em;
+  /* 与文字对齐 */
+  vertical-align: middle;
+  /* 不可勾选 */
+  pointer-events: none;
+}
+
+/* 导航栏菜单鼠标移入字体放大 */
+#nav #site-name:hover, 
+#nav .menus_item:hover, 
+#nav #search-button:hover{
+    font-size:19px;
+}
+
+
+@font-face {
+    font-family: 'Zhuzi';
+    src: url('/Fonts/Zhuzi.ttf');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'xiaogou';
+    src: url('/Fonts/xiaogou.ttf');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'JinBuTi';
+    src: url('/Fonts/DingTalk-JinBuTi.woff2') format('woff2'),url('/Fonts/DingTalk-JinBuTi.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Source Code Pro';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url('/Fonts/source-code-pro-cyrillic-400-normal.woff2') format("woff2"),url('/Fonts/source-code-pro-cyrillic-400-normal.woff2') format("woff");
+    unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;
+}
+
+@font-face {
+    font-family: 'consolas';
+    src: url('/Fonts/Consolas.ttf');
+    font-display: swap;
+}
+
+#footer-animal {
+    position: relative;
+    width: 100%;
+}
+
+#footer-animal .animal-wall {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 36px;
+    max-width: none;
+    background: #bcb0a4 url(https://p.qjqq.cn/cover/202410191400532.png/color) repeat center;
+    background-size: auto 100%;
+    box-shadow: 0 4px 7px rgba(0,0,0,.15);
+}
+
+@media screen and (max-width: 1023px) {
+    #footer-animal .animal-wall {
+        height:4vw
+    }
+}
+
+#footer-animal img.animal {
+    position: relative;
+    max-width: min(974px,100vw);
+    margin: 0 auto;
+    display: block;
+}
+
+#footer-bar {
+    margin-top: 0 !important;
+}
+
+
+body {
+  background-image: url("https://file.guangzhoueven.dpdns.org/background.svg");
+  background-attachment: fixed;
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+
+
+.animal {
+    animation: sway 3s ease-in-out infinite;
+    display: block;
+    max-width: 100px;
+    margin: 0 auto;
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(-10px); /* 向左偏移 */
+    }
+    50% {
+        transform: translateX(10px); /* 向右偏移 */
+    }
+}
+
+/* ============================================================
+   修复：内容区鼠标滚轮被吞掉（必须移到顶栏/滚动条才能滚动）
+   原因：Chrome 会把 overflow:hidden 且内容被裁剪（scrollHeight>clientHeight）
+   的盒子当作隐形滚动容器，滚轮命中它之后既不滚动它、也不向页面传播。
+   处理：overflow:hidden 纯粹用于裁剪的卡片改为 overflow:clip——
+   clip 同样裁剪内容、视觉完全一致，但不会创建滚动容器，滚轮正常传播。
+   ============================================================ */
+#page-header.post-bg,
+#page-header,
+#post-top-cover,
+.categoryItem,
+a.categoryButton,
+.card-archive-list-count,
+.article-sort-item,
+.article-sort-item-img,
+#post-top-cover,
+a.thumbnail,
+#page-name,
+a.comment,
+.mask-name-container,
+.console-card.history,
+#random-banner,
+#console .console-card.history,
+#aside-content .card-archive-list-count {
+    overflow: clip !important;
+}

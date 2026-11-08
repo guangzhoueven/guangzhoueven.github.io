@@ -1,0 +1,791 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+<link rel="stylesheet" href="/css/bilicard.css">
+<!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>C++ 原根知识详解 | guangzhou_even</title><meta name="keywords" content="C++,编程"><meta name="author" content="guangzhou_even"><meta name="copyright" content="guangzhou_even"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="C++ 原根知识详解"><meta name="application-name" content="C++ 原根知识详解"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta name="description" content="C++ 原根知识详解 前言：为什么要学原根？ 可能你会问，“原根” 听起来这么陌生，学它有啥用？其实它在生活中藏得很深 —— 比如你手机支付时的加密、网上传输文件的安全保障，背后都有原根的影子。而且它 像看起来那么难，就像学骑自行车，一开始觉得复杂，掌握规律后就很简单。这篇文章会用大白话，从最基础的"><link rel="shortcut icon" href="/img/pwa/favicon_96.png"><link rel="canonical" href="https://blog.gzeven.cc.cd/posts/1935/"><link rel="preconnect"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/pluginsSrc/font-awesome-animation/dist/font-awesome-animation.min.css"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/anzhiyu-theme-static/swiper/swiper.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与优秀博主共同进步","addFriendPlaceholder":"昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"},
+  peoplecanvas: undefined,
+  postHeadAiDescription: undefined,
+  diytitle: undefined,
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: 'https://twikoo.gzeven.cc.cd/',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: false,
+  mainTone: undefined,
+  authorStatus: {"skills":null},
+  algolia: {"appId":"KM12DDPJKK","apiKey":"2bca42e5d6aae364d05cdfa6fb01630e","indexName":"blog","hits":{"per_page":6},"languages":{"input_placeholder":"输入关键词后按下回车查找","hits_empty":"找不到您查询的内容：${query}","hits_stats":"找到 ${hits} 条结果，用时 ${time} 毫秒"}},
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"这篇文章距离最后更新已经过了","messageNext":"天，文章内容可能与实际不符，请仔细判别。"},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":500,"languages":{"author":"作者: guangzhou_even","link":"链接: ","source":"来源: guangzhou_even","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: 'guangzhou_even',
+  title: 'C++ 原根知识详解',
+  postAI: '',
+  pageFillDescription: 'C++ 原根知识详解, 前言：为什么要学原根？, 一、先搞懂两个 预备知识, 1.1 什么是 互质？, 1.2 什么是 欧拉函数 φ(m)？, 二、原根到底是什么？（核心定义）, 用例子帮你理解：判断 3 是不是 7 的原根？, 再举个反例：2 是不是 8 的原根？, 三、不是所有数都有原根！（原根存在的条件）, 用例子验证：哪些数有原根？, 四、原根的 小脾气：几个重要性质（大白话版）, 4.1 一个数的原根不止一个（如果有的话）, 4.2 原根的 幂次 也能当原根, 4.3 原根的幂次有 周期性, 五、怎么判断一个数是不是原根？（判定方法）, 判定步骤（以判断 a 是不是 m 的原根为例）：, 举个例子：判断 2 是不是 9 的原根？, 六、原根有啥用？（实际应用场景）, 6.1 密码学：保护你的信息安全, 6.2 简化数论计算, 6.3 生成伪随机数, 七、小白常见问题解答, 总结原根知识详解前言为什么要学原根可能你会问原根听起来这么陌生学它有啥用其实它在生活中藏得很深比如你手机支付时的加密网上传输文件的安全保障背后都有原根的影子而且它像看起来那么难就像学骑自行车一开始觉得复杂掌握规律后就很简单这篇文章会用大白话从最基础的内容讲起让你轻松搞懂原根一先搞懂两个预备知识在说原根之前得先明白两个简单概念不然就像学数学没学过加减直接学乘法一样费劲什么是互质互质就是两个数的最大公约数只有比如和它们的公约数只有所以互质不和公约数有最大公约数是所以不互质你可以这么记两个数除了之外没有其他共同的除数就是互质什么是欧拉函数欧拉函数读作斐简单说就是小于且和互质的正整数的个数举几个例子当时小于的正整数是这些数都和互质因为是质数除了和自己和其他数都互质所以当时小于的正整数是其中和互质的是这些数和的最大公约数都是所以当时小于的正整数是和互质的是所以记住欧拉函数就是数个数数那些比小还和互质的数有多少个二原根到底是什么核心定义有了上面的基础咱们就能说原根了先看定义我会拆成人话来讲原根定义设和是互质的正整数如果满足两个条件存在一个最小的正整数使得除以的余数是写成数学式就是就是除以取余数这个最小的刚好等于就是前面说的欧拉函数值那咱们就说是的原根用例子帮你理解判断是不是的原根咱们一步一步来就像拆快递一样慢慢看先确认和是否互质和的最大公约数是满足互质条件计算前面算过所以咱们要找的得是最小的能让的数而且这个得等于验证是不是最小的算除以余不是除以余不是除以余不是除以余不是除以余不是除以余刚好是结论没有比更小的能让而且所以是的原根再举个反例是不是的原根先确认和是否互质和的最大公约数是不互质直接不符合第一个条件所以肯定不是的原根而且后面会说本身就没有原根三不是所有数都有原根原根存在的条件就像不是所有花都会结果一样不是所有正整数都有原根只有以下种情况的才有原根这三个是特殊的小数字是奇质数的次方比如是奇质数是奇质数是乘以奇质数的次方比如是奇质数是奇质数用例子验证哪些数有原根属于奇质数的次方有原根前面算过是的原根属于乘以奇质数的次方有原根比如是的原根后面可以自己验证不属于上面任何一种情况没有原根不是乘以奇质数的次方因为的次数是超过了没有原根记住先看是不是这三种情况不是的话直接不用找原根了肯定没有四原根的小脾气几个重要性质大白话版原根有几个特殊的脾气理解了这些后面用原根会更方便一个数的原根不止一个如果有的话比如前面知道是它的原根其实也是它的原根可以自己算而且没有比更小的那原根有多少个呢答案是个比如小于且和互质的数是共个所以有个原根刚好是和原根的幂次也能当原根如果是的原根那么只要和互质除以的余数也是的原根比如原根和互质的数是当时是原根当时也是原根和前面的例子一致原根的幂次有周期性比如是的原根那么除以的余数和除以的余数除以的余数一样比如原根算除以余所以实际计算除以余和上面的结果一样是不是很方便不用算很大的数了五怎么判断一个数是不是原根判定方法前面咱们用例子验证过现在总结成步骤像查字典一样一步一步来就能判断判定步骤以判断是不是的原根为例第一步查资格先看和是不是互质如果不互质直接排除不是原根第二步算目标计算咱们要找的就是第三步拆把分解成质因数比如分解成第四步验证最小性对于每个质因数计算除以的余数如果所有余数都不是那就是的原根如果有一个余数是就不是举个例子判断是不是的原根第一步和互质最大公约数有资格第二步小于且和互质的数是共个第三步分解的质因数是和第四步验证算算两个余数都不是所以是的原根六原根有啥用实际应用场景学了这么多总得知道原根能干嘛吧它的应用主要在安全和计算方面密码学保护你的信息安全比如手机支付网上银行转账时需要把信息加密防止被偷改原根是离散对数加密的核心简单说就是利用知道和求很容易但知道和求很难这个特点让加密变得安全像密钥交换两个人在网上安全交换密码的方法就用到了原根简化数论计算比如解高次同余方程比如这样的方程直接解很难但用原根把换成原根的幂次就能把高次方程变成一次方程轻松求解生成伪随机数咱们平时用的随机数比如游戏里的随机掉落很多是伪随机数用公式算出来的用原根的幂次可以生成均匀分布的伪随机数比如根据的结果能生成这样的序列看起来很随机七小白常见问题解答原根一定要是比小的数吗不一定但通常我们找的是比小的原根因为大于的数除以会有余数这个余数肯定比小而且和原数的效果一样比如找的原根有原根是的原根但也是的原根所以找小的更方便欧拉函数算错了怎么办欧拉函数有个简单算法如果分解成质数的乘积比如那么比如和前面算的一致用这个公式不容易错找不到原根怎么办先检查是不是符合有原根的种情况如果不符合肯定找不到如果符合就从开始依次试比如找的原根试和不互质排除试和互质分解算所以是的原根总结原根其实就是和互质且幂次能生成所有与互质数的数核心是互质和最小周期等于欧拉函数值记住个关键点先看有没有原根种情况判断是不是原根分步走查资格算目标拆因数验最小原根主要用在加密计算和生成随机数只要多拿几个例子练一练比如找的原根你很快就能掌握原根的知识下次再听到原根就不会觉得陌生啦',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-11-08 05:01:27',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/pluginsSrc/animate.css/animate.min.css"><link rel="stylesheet" href="/pluginsSrc/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/cur.css"><link rel="stylesheet" href="/schedule/schedule.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="/pluginsSrc/font-awesome-animation/dist/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/hexo-butterfly-tag-plugins-plus/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="/pluginsSrc/hexo-butterfly-tag-plugins-plus/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 8.1.2"><link rel="alternate" href="/atom.xml" title="guangzhou_even" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="/img/pwa/favicon_96.png"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="/pluginsSrc/anzhiyu-theme-static/progress_bar/progress_bar.css"/><script async="async" src="/pluginsSrc/pace-js/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">作者网站</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.gzeven.cc.cd/" title="主页"><img class="back-menu-item-icon" src="/img/logo.png" alt="主页"/><span class="back-menu-item-text">主页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://nav.gzeven.cc.cd/" title="起始页"><img class="back-menu-item-icon" src="/img/box/nav.png" alt="起始页"/><span class="back-menu-item-text">起始页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://hot.gzeven.cc.cd/" title="今日热榜"><img class="back-menu-item-icon" src="/img/box/hot.png" alt="今日热榜"/><span class="back-menu-item-text">今日热榜</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://surf.gzeven.cc.cd/" title="SURF"><img class="back-menu-item-icon" src="/img/box/surf.png" alt="SURF"/><span class="back-menu-item-text">SURF</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://catch-cat.gzeven.cc.cd/" title="抓住那只猫"><img class="back-menu-item-icon" src="/img/box/catch-cat.png" alt="抓住那只猫"/><span class="back-menu-item-text">抓住那只猫</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://tafang.gzeven.cc.cd/" title="塔防"><img class="back-menu-item-icon" src="/img/box/tafang.png" alt="塔防"/><span class="back-menu-item-text">塔防</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://minesweeper.gzeven.cc.cd/" title="扫雷"><img class="back-menu-item-icon" src="/img/box/minesweeper.png" alt="扫雷"/><span class="back-menu-item-text">扫雷</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://boxel.gzeven.cc.cd/" title="Boxel"><img class="back-menu-item-icon" src="/img/box/boxel.png" alt="Boxel"/><span class="back-menu-item-text">Boxel</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://tetris.gzeven.cc.cd/" title="俄罗斯方块"><img class="back-menu-item-icon" src="/img/box/tetris.png" alt="俄罗斯方块"/><span class="back-menu-item-text">俄罗斯方块</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://restart.gzeven.cc.cd/" title="人生重开模拟器"><img class="back-menu-item-icon" src="/img/box/people.png" alt="人生重开模拟器"/><span class="back-menu-item-text">人生重开模拟器</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://wuziqi.gzeven.cc.cd/" title="五子棋"><img class="back-menu-item-icon" src="/img/box/wuziqi.png" alt="五子棋"/><span class="back-menu-item-text">五子棋</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://fireworks.gzeven.cc.cd/" title="烟花"><img class="back-menu-item-icon" src="/img/box/fireworks.png" alt="烟花"/><span class="back-menu-item-text">烟花</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://markdown.gzeven.cc.cd/" title="Markdown"><img class="back-menu-item-icon" src="/img/box/Markdown.png" alt="Markdown"/><span class="back-menu-item-text">Markdown</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://oitrainer.gzeven.cc.cd/start" title="OI教练模拟器"><img class="back-menu-item-icon" src="/img/box/oitrainer.png" alt="OI教练模拟器"/><span class="back-menu-item-text">OI教练模拟器</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">guangzhou_even</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 文章列表</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i><span> 全部标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder faa-tada"></i><span> 全部分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="fa-fw fas fa-book faa-tada"></i><span> 即刻短文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/tools/status/"><i class="fa-fw fas fa-refresh faa-tada"></i><span> 站点监测</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tools/recentcomment/"><i class="fa-fw fas fa-list faa-tada"></i><span> 最近评论</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tools/kongtiao/"><i class="fa-fw fas fa-window-maximize faa-tada"></i><span> 空调</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tools/ziliao/"><i class="fa-fw fas fa-book faa-tada"></i><span> 资料</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tools/website/"><i class="fa-fw fas fa-list faa-tada"></i><span> 网站</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/message/"><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/links/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友情链接</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/oj/"><i class="fa-fw fas fa-list faa-tada"></i><span> 编程OJ</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><span> 关于</span></a></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索🔍" accesskey="s"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span> 搜索</span></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 1.05rem;">C++<sup>11</sup></a><a href="/tags/%E4%B8%AD%E8%80%83/" style="font-size: 1.05rem;">中考<sup>1</sup></a><a href="/tags/%E5%88%9D%E4%B8%AD/" style="font-size: 1.05rem;">初中<sup>2</sup></a><a href="/tags/%E5%8D%9A%E5%BC%88/" style="font-size: 1.05rem;">博弈<sup>1</sup></a><a href="/tags/%E5%A5%A5%E6%95%B0/" style="font-size: 1.05rem;">奥数<sup>1</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 1.05rem;">编程<sup>11</sup></a><a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 1.05rem;">英语<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/11/"><span class="card-archive-list-date">十一月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">6</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/05/"><span class="card-archive-list-date">五月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/04/"><span class="card-archive-list-date">四月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/11/"><span class="card-archive-list-date">十一月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/10/"><span class="card-archive-list-date">十月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">2</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/09/"><span class="card-archive-list-date">九月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/C/" itemprop="url">C++</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/C/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>C++</span></a><a class="article-meta__tags" href="/tags/%E7%BC%96%E7%A8%8B/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>编程</span></a></span></div></div><h1 class="post-title" itemprop="name headline">C++ 原根知识详解</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2025-09-07T00:00:00.000Z" title="发表于 2025-09-07 00:00:00">2025-09-07</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-11-08T05:01:27.765Z" title="更新于 2026-11-08 05:01:27">2026-11-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator"></span><span class="post-meta-wordcount"><i class="anzhiyufont anzhiyu-icon-file-word post-meta-icon" title="文章字数"></i><span class="post-meta-label" title="文章字数">字数总计:</span><span class="word-count" title="文章字数">2.7k</span><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-clock post-meta-icon" title="阅读时长"></i><span class="post-meta-label" title="阅读时长">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为China"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>China</span><span class="post-meta-separator"></span><span class="post-meta-commentcount"><i class="anzhiyufont anzhiyu-icon-comments post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/1935/#post-comment" tabindex="-1"><span id="twikoo-count"><i class="anzhiyufont anzhiyu-icon-spinner anzhiyu-spin"></i></span></a></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/posts/%E5%8E%9F%E6%A0%B9.webp"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://blog.gzeven.cc.cd/posts/1935/"><header><a class="post-meta-categories" href="/categories/C/" itemprop="url">C++</a><a href="/tags/C/" tabindex="-1" itemprop="url">C++</a><a href="/tags/%E7%BC%96%E7%A8%8B/" tabindex="-1" itemprop="url">编程</a><h1 id="CrawlerTitle" itemprop="name headline">C++ 原根知识详解</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">guangzhou_even</span><time itemprop="dateCreated datePublished" datetime="2025-09-07T00:00:00.000Z" title="发表于 2025-09-07 00:00:00">2025-09-07</time><time itemprop="dateCreated datePublished" datetime="2026-11-08T05:01:27.765Z" title="更新于 2026-11-08 05:01:27">2026-11-08</time></header><h1 id="c-原根知识详解">C++ 原根知识详解</h1>
+<h2 id="前言为什么要学原根">前言：为什么要学原根？</h2>
+<p>可能你会问，“原根” 听起来这么陌生，学它有啥用？其实它在生活中藏得很深 —— 比如你手机支付时的加密、网上传输文件的安全保障，背后都有原根的影子。而且它</p>
+<p>像看起来那么难，就像学骑自行车，一开始觉得复杂，掌握规律后就很简单。这篇文章会用大白话，从最基础的内容讲起，让你轻松搞懂原根。</p>
+<h2 id="一-先搞懂两个-预备知识">一、先搞懂两个 “预备知识”</h2>
+<p>在说原根之前，得先明白两个简单概念，不然就像学数学没学过加减，直接学乘法一样费劲。</p>
+<h3 id="11-什么是-互质">1.1 什么是 “互质”？</h3>
+<p>“互质” 就是两个数的 “最大公约数只有 1”。比如：</p>
+<ul>
+<li>
+<p>3 和 7：它们的公约数只有 1，所以互质；不</p>
+</li>
+<li>
+<p>4 和 6：公约数有 1、2，最大公约数是 2，所以不互质。</p>
+</li>
+</ul>
+<p>你可以这么记：两个数除了 1 之外，没有其他 “共同的除数”，就是互质。</p>
+<h3 id="12-什么是-欧拉函数-φm">1.2 什么是 “欧拉函数 φ(m)”？</h3>
+<p>欧拉函数 φ(m)（读作 “斐 (m)”），简单说就是 “小于 m 且和 m 互质的正整数的个数”。举几个例子：</p>
+<ul>
+<li>
+<p>当 m=7 时：小于 7 的正整数是 1、2、3、4、5、6，这些数都和 7 互质（因为 7 是质数，除了 1 和自己，和其他数都互质），所以 φ(7)=6；</p>
+</li>
+<li>
+<p>当 m=8 时：小于 8 的正整数是 1、2、3、4、5、6、7，其中和 8 互质的是 1、3、5、7（这些数和 8 的最大公约数都是 1），所以 φ(8)=4；</p>
+</li>
+<li>
+<p>当 m=4 时：小于 4 的正整数是 1、2、3，和 4 互质的是 1、3，所以 φ(4)=2。</p>
+</li>
+</ul>
+<p>记住：欧拉函数就是 “数个数”，数那些 “比 m 小、还和 m 互质” 的数有多少个。</p>
+<h2 id="二-原根到底是什么核心定义">二、原根到底是什么？（核心定义）</h2>
+<p>有了上面的基础，咱们就能说原根了。先看定义，我会拆成 “人话” 来讲：</p>
+<p><strong>原根定义</strong>：设 a 和 m 是互质的正整数，如果满足两个条件：</p>
+<ol>
+<li>
+<p>存在一个最小的正整数 d，使得 a^d 除以 m 的余数是 1（写成数学式就是 a^d ≡ 1 mod m，“mod” 就是 “除以取余数”）；</p>
+</li>
+<li>
+<p>这个最小的 d，刚好等于 φ(m)（就是前面说的欧拉函数值）。</p>
+<p>那咱们就说 a 是 m 的 “原根”。</p>
+</li>
+</ol>
+<h3 id="用例子帮你理解判断-3-是不是-7-的原根">用例子帮你理解：判断 3 是不是 7 的原根？</h3>
+<p>咱们一步一步来，就像拆快递一样，慢慢看：</p>
+<ol>
+<li>
+<p>先确认 a=3 和 m=7 是否互质：3 和 7 的最大公约数是 1，满足 “互质” 条件；</p>
+</li>
+<li>
+<p>计算 φ(7)：前面算过，φ(7)=6，所以咱们要找的 d 得是 “最小的、能让 3^d mod 7=1” 的数，而且这个 d 得等于 6；</p>
+</li>
+<li>
+<p>验证 d 是不是最小的 6：</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>算 3^1=3，3 除以 7 余 3，不是 1；</p>
+</li>
+<li>
+<p>3^2=9，9 除以 7 余 2，不是 1；</p>
+</li>
+<li>
+<p>3^3=27，27 除以 7 余 6，不是 1；</p>
+</li>
+<li>
+<p>3^4=81，81 除以 7 余 4（7×11=77，81-77=4），不是 1；</p>
+</li>
+<li>
+<p>3^5=243，243 除以 7 余 5（7×34=238，243-238=5），不是 1；</p>
+</li>
+<li>
+<p>3^6=729，729 除以 7 余 1（7×104=728，729-728=1），刚好是 1！</p>
+</li>
+</ul>
+<ol>
+<li>结论：没有比 6 更小的 d 能让 3^d mod 7=1，而且 d=φ(7)=6，所以 3 是 7 的原根。</li>
+</ol>
+<h3 id="再举个反例2-是不是-8-的原根">再举个反例：2 是不是 8 的原根？</h3>
+<ol>
+<li>先确认 2 和 8 是否互质：2 和 8 的最大公约数是 2，不互质，直接不符合第一个条件，所以 2 肯定不是 8 的原根（而且后面会说，8 本身就没有原根）。</li>
+</ol>
+<h2 id="三-不是所有数都有原根原根存在的条件">三、不是所有数都有原根！（原根存在的条件）</h2>
+<p>就像不是所有花都会结果一样，不是所有正整数 m 都有原根。只有以下 3 种情况的 m，才有原根：</p>
+<ol>
+<li>
+<p>m=1、2、4（这三个是特殊的小数字）；</p>
+</li>
+<li>
+<p>m 是 “奇质数的 k 次方”，比如 3²=9（3 是奇质数，k=2）、5³=125（5 是奇质数，k=3）；</p>
+</li>
+<li>
+<p>m 是 “2 乘以奇质数的 k 次方”，比如 2×3=6（3 是奇质数，k=1）、2×5²=50（5 是奇质数，k=2）。</p>
+</li>
+</ol>
+<h3 id="用例子验证哪些数有原根">用例子验证：哪些数有原根？</h3>
+<ul>
+<li>
+<p>m=9：属于 “奇质数的 k 次方”（3²），有原根（前面算过 2 是 9 的原根）；</p>
+</li>
+<li>
+<p>m=6：属于 “2 乘以奇质数的 k 次方”（2×3），有原根（比如 5 是 6 的原根，后面可以自己验证）；</p>
+</li>
+<li>
+<p>m=8：不属于上面任何一种情况，没有原根；</p>
+</li>
+<li>
+<p>m=12：12=2²×3，不是 “2 乘以奇质数的 k 次方”（因为 2 的次数是 2，超过 1 了），没有原根。</p>
+</li>
+</ul>
+<p>记住：先看 m 是不是这三种情况，不是的话，直接不用找原根了，肯定没有。</p>
+<h2 id="四-原根的-小脾气几个重要性质大白话版">四、原根的 “小脾气”：几个重要性质（大白话版）</h2>
+<p>原根有几个特殊的 “脾气”，理解了这些，后面用原根会更方便。</p>
+<h3 id="41-一个数的原根不止一个如果有的话">4.1 一个数的原根不止一个（如果有的话）</h3>
+<p>比如 m=7，前面知道 3 是它的原根，其实 5 也是它的原根（可以自己算：5^6 mod 7=1，而且没有比 6 更小的 d）。那原根有多少个呢？答案是 φ(φ(m)) 个。</p>
+<ul>
+<li>比如 m=7，φ(7)=6，φ(6)=2（小于 6 且和 6 互质的数是 1、5，共 2 个），所以 7 有 2 个原根，刚好是 3 和 5。</li>
+</ul>
+<h3 id="42-原根的-幂次-也能当原根">4.2 原根的 “幂次” 也能当原根</h3>
+<p>如果 a 是 m 的原根，那么只要 k 和 φ(m) 互质，a^k 除以 m 的余数也是 m 的原根。</p>
+<ul>
+<li>
+<p>比如 m=7，原根 a=3，φ(7)=6，和 6 互质的数是 1、5；</p>
+</li>
+<li>
+<p>当 k=1 时，3^1 mod 7=3，是原根；</p>
+</li>
+<li>
+<p>当 k=5 时，3^5=243，243 mod 7=5，也是原根（和前面的例子一致）。</p>
+</li>
+</ul>
+<h3 id="43-原根的幂次有-周期性">4.3 原根的幂次有 “周期性”</h3>
+<p>比如 a 是 m 的原根，那么 a^n 除以 m 的余数，和 a^(n 除以 φ(m) 的余数) 除以 m 的余数一样。</p>
+<ul>
+<li>
+<p>比如 m=7，原根 a=3，φ(7)=6；</p>
+</li>
+<li>
+<p>算 3^7 mod 7：7 除以 6 余 1，所以 3^7 mod 7=3^1 mod 7=3；</p>
+</li>
+<li>
+<p>实际计算 3^7=2187，2187 除以 7 余 3，和上面的结果一样，是不是很方便？不用算很大的数了。</p>
+</li>
+</ul>
+<h2 id="五-怎么判断一个数是不是原根判定方法">五、怎么判断一个数是不是原根？（判定方法）</h2>
+<p>前面咱们用例子验证过，现在总结成 “步骤”，像查字典一样，一步一步来就能判断。</p>
+<h3 id="判定步骤以判断-a-是不是-m-的原根为例">判定步骤（以判断 a 是不是 m 的原根为例）：</h3>
+<ol>
+<li>
+<p><strong>第一步：查 “资格”</strong>：先看 a 和 m 是不是互质，如果不互质，直接排除，不是原根；</p>
+</li>
+<li>
+<p><strong>第二步：算 “目标 d”</strong>：计算 φ(m)，咱们要找的 d 就是 φ(m)；</p>
+</li>
+<li>
+<p><strong>第三步：拆 “φ(m)”</strong>：把 φ(m) 分解成质因数（比如 φ(m)=6，分解成 2×3）；</p>
+</li>
+<li>
+<p><strong>第四步：验证 “最小性”</strong>：对于每个质因数 p，计算 a^(φ(m)/p) 除以 m 的余数，如果所有余数都不是 1，那 a 就是 m 的原根；如果有一个余数是 1，就不是。</p>
+</li>
+</ol>
+<h3 id="举个例子判断-2-是不是-9-的原根">举个例子：判断 2 是不是 9 的原根？</h3>
+<ol>
+<li>
+<p>第一步：2 和 9 互质（最大公约数 1），有资格；</p>
+</li>
+<li>
+<p>第二步：φ(9)=6（小于 9 且和 9 互质的数是 1、2、4、5、7、8，共 6 个）；</p>
+</li>
+<li>
+<p>第三步：分解 φ(9)=6 的质因数，是 2 和 3；</p>
+</li>
+<li>
+<p>第四步：验证：</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>算 2<sup>(6/2)=2</sup>3=8，8 mod 9=8≠1；</p>
+</li>
+<li>
+<p>算 2<sup>(6/3)=2</sup>2=4，4 mod 9=4≠1；</p>
+</li>
+<li>
+<p>两个余数都不是 1，所以 2 是 9 的原根。</p>
+</li>
+</ul>
+<h2 id="六-原根有啥用实际应用场景">六、原根有啥用？（实际应用场景）</h2>
+<p>学了这么多，总得知道原根能干嘛吧？它的应用主要在 “安全” 和 “计算” 方面：</p>
+<h3 id="61-密码学保护你的信息安全">6.1 密码学：保护你的信息安全</h3>
+<p>比如手机支付、网上银行转账时，需要把信息加密，防止被偷改。原根是 “离散对数加密” 的核心 —— 简单说，就是利用 “知道 a 和 m，求 a^k mod m 很容易，但知道 a、m 和 a^k mod m，求 k 很难” 这个特点，让加密变得安全。像 Diffie-Hellman 密钥交换（两个人在网上安全交换密码的方法），就用到了原根。</p>
+<h3 id="62-简化数论计算">6.2 简化数论计算</h3>
+<p>比如解 “高次同余方程”（比如 x^5 ≡ 3 mod 7 这样的方程），直接解很难，但用原根把 x 换成原根的幂次，就能把高次方程变成一次方程，轻松求解。</p>
+<h3 id="63-生成伪随机数">6.3 生成伪随机数</h3>
+<p>咱们平时用的随机数（比如游戏里的随机掉落），很多是 “伪随机数”（用公式算出来的）。用原根的幂次可以生成 “均匀分布” 的伪随机数，比如根据 3^n mod 7 的结果，能生成 3、2、6、4、5、1、3、2…… 这样的序列，看起来很随机。</p>
+<h2 id="七-小白常见问题解答">七、小白常见问题解答</h2>
+<ol>
+<li>
+<p><strong>Q：原根一定要是比 m 小的数吗？</strong></p>
+<p>A：不一定，但通常我们找的是比 m 小的原根，因为大于 m 的数除以 m 会有余数，这个余数肯定比 m 小，而且和原数的效果一样。比如找 10 的原根（10=2×5，有原根），17 是 10 的原根，但 17 mod 10=7，7 也是 10 的原根，所以找小的更方便。</p>
+</li>
+<li>
+<p><strong>Q：欧拉函数算错了怎么办？</strong></p>
+<p>A：欧拉函数有个简单算法：如果 m 分解成质数的乘积，比如 m=p1^k1 × p2^k2 × … × pn^kn，那么 φ(m)=m×(1-1/p1)×(1-1/p2)×…×(1-1/pn)。比如 m=12=2²×3，φ(12)=12×(1-1/2)×(1-1/3)=12×1/2×2/3=4，和前面算的一致，用这个公式不容易错。</p>
+</li>
+<li>
+<p><strong>Q：找不到原根怎么办？</strong></p>
+<p>A：先检查 m 是不是符合 “有原根的 3 种情况”，如果不符合，肯定找不到；如果符合，就从 2 开始依次试，比如找 10 的原根，试 2：2 和 10 不互质，排除；试 3：3 和 10 互质，φ(10)=4，分解 4=2，算 3^(4/2)=3²=9 mod 10=9≠1，所以 3 是 10 的原根。</p>
+</li>
+</ol>
+<h2 id="总结">总结</h2>
+<p>原根其实就是 “和 m 互质、且幂次能生成所有与 m 互质数” 的数，核心是 “互质” 和 “最小周期等于欧拉函数值”。记住 3 个关键点：</p>
+<ol>
+<li>
+<p>先看 m 有没有原根（3 种情况）；</p>
+</li>
+<li>
+<p>判断 a 是不是原根，分 4 步走（查资格、算目标、拆因数、验最小）；</p>
+</li>
+<li>
+<p>原根主要用在加密、计算和生成随机数。</p>
+</li>
+</ol>
+<p>只要多拿几个例子练一练（比如找 5、6、9 的原根），你很快就能掌握原根的知识，下次再听到 “原根”，就不会觉得陌生啦！</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src="/img/logo.png" title="头像" alt="头像"><img class="post-copyright__author_img_front" src="/img/logo.png" title="头像" alt="头像"></a><div class="post-copyright__author_name">guangzhou_even</div><div class="post-copyright__author_desc">guangzhou_even的博客</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://blog.gzeven.cc.cd/posts/1935/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://blog.gzeven.cc.cd/posts/1935/')">C++ 原根知识详解</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://blog.gzeven.cc.cd/posts/1935/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=C++ 原根知识详解&amp;url=https://blog.gzeven.cc.cd/posts/1935/&amp;pic=/img/posts/%E5%8E%9F%E6%A0%B9.webp" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.gzeven.cc.cd" target="_blank">guangzhou_even</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/C/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>C++<span class="tagsPageCount">11</span></a><a class="post-meta__box__tags" href="/tags/%E7%BC%96%E7%A8%8B/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>编程<span class="tagsPageCount">11</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="/img/posts/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.webp" data-sites="qq,weibo,twitter,facebook,linkedin,wechat"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/25773/"><img class="next-cover" src="/img/posts/Freopen.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">C++ Freopen使用指南</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/posts/27584/" title="C++ DFS与BFS"><img class="cover" src="/img/posts/C++%20DFS%E4%B8%8EBFS.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-04-13</div><div class="title">C++ DFS与BFS</div></div></a></div><div><a href="/posts/25773/" title="C++ Freopen使用指南"><img class="cover" src="/img/posts/Freopen.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-09-07</div><div class="title">C++ Freopen使用指南</div></div></a></div><div><a href="/posts/20400/" title="C++ Lambda表达式的运用"><img class="cover" src="/img/posts/Lambda.webp" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2025-10-04</div><div class="title">C++ Lambda表达式的运用</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="anzhiyufont anzhiyu-icon-comments"></i><span> 评论</span></div><div class="comment-randomInfo"><a onclick="anzhiyu.addRandomCommentInfo()" href="javascript:void(0)" style="display: none">匿名评论</a><a href="/privacy" style="margin-left: 4px">隐私政策</a></div><div class="comment-tips" id="comment-tips"><span>✅ 你无需删除空行，直接评论以获取最佳展示效果</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div><div class="comment-barrage"></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="card-widget card-widget-schedule" id="card-widget-schedule"><div class="item-headline"><i class="anzhiyu-icon-clock"></i><span>今日时间</span></div><div class="item-content"><div id="schedule-area-left">
+  <div id="schedule-title">距离除夕</div>
+  <div id="schedule-days"></div>
+  <div id="schedule-date">2027-02-05</div>
+</div>
+<div id="schedule-area-right">
+  <div class="schedule-r0">
+    <div class="schedule-d0">本年</div>
+    <div class="schedule-d1">
+      <span id="p_span_year" class="aside-span1"></span>
+      <span class="aside-span2">还剩<a></a>天</span>
+      <progress max="365" id="pBar_year"></progress>
+    </div>
+  </div>
+  <div class="schedule-r1">
+    <div class="schedule-d0">本月</div>
+    <div class="schedule-d1">
+      <span id="p_span_month" class="aside-span1"></span>
+      <span class="aside-span2">还剩<a></a>天</span>
+      <progress max="30" id="pBar_month"></progress>
+    </div>
+  </div>
+  <div class="schedule-r2">
+    <div class="schedule-d0">本周</div>
+    <div class="schedule-d1">
+      <span id="p_span_week" class="aside-span1"></span>
+      <span class="aside-span2">还剩<a></a>天</span>
+      <progress max="7" id="pBar_week"></progress>
+    </div>
+  </div>
+</div>
+</div></div><div class="card-widget card-widget-calendar" id="card-widget-calendar"><div class="item-headline"><i class="anzhiyu-icon-calendar"></i><span>日历</span></div><div class="item-content"><div id="calendar-area-left">
+  <div id="calendar-week"></div>
+  <div id="calendar-date" style="font-size: 48px;"></div>
+  <div id="calendar-solar"></div>
+  <div id="calendar-lunar"></div>
+</div>
+<div id="calendar-area-right">
+  <div id="calendar-main">
+  </div>
+</div>
+</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c-%E5%8E%9F%E6%A0%B9%E7%9F%A5%E8%AF%86%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.</span> <span class="toc-text">C++ 原根知识详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%AD%A6%E5%8E%9F%E6%A0%B9"><span class="toc-number">1.1.</span> <span class="toc-text">前言：为什么要学原根？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%85%88%E6%90%9E%E6%87%82%E4%B8%A4%E4%B8%AA-%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">一、先搞懂两个 “预备知识”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E4%BB%80%E4%B9%88%E6%98%AF-%E4%BA%92%E8%B4%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.1 什么是 “互质”？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E4%BB%80%E4%B9%88%E6%98%AF-%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0-%CF%86m"><span class="toc-number">1.2.2.</span> <span class="toc-text">1.2 什么是 “欧拉函数 φ(m)”？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E5%8E%9F%E6%A0%B9%E5%88%B0%E5%BA%95%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B8%E5%BF%83%E5%AE%9A%E4%B9%89"><span class="toc-number">1.3.</span> <span class="toc-text">二、原根到底是什么？（核心定义）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BE%8B%E5%AD%90%E5%B8%AE%E4%BD%A0%E7%90%86%E8%A7%A3%E5%88%A4%E6%96%AD-3-%E6%98%AF%E4%B8%8D%E6%98%AF-7-%E7%9A%84%E5%8E%9F%E6%A0%B9"><span class="toc-number">1.3.1.</span> <span class="toc-text">用例子帮你理解：判断 3 是不是 7 的原根？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%8D%E4%B8%BE%E4%B8%AA%E5%8F%8D%E4%BE%8B2-%E6%98%AF%E4%B8%8D%E6%98%AF-8-%E7%9A%84%E5%8E%9F%E6%A0%B9"><span class="toc-number">1.3.2.</span> <span class="toc-text">再举个反例：2 是不是 8 的原根？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E4%B8%8D%E6%98%AF%E6%89%80%E6%9C%89%E6%95%B0%E9%83%BD%E6%9C%89%E5%8E%9F%E6%A0%B9%E5%8E%9F%E6%A0%B9%E5%AD%98%E5%9C%A8%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.4.</span> <span class="toc-text">三、不是所有数都有原根！（原根存在的条件）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BE%8B%E5%AD%90%E9%AA%8C%E8%AF%81%E5%93%AA%E4%BA%9B%E6%95%B0%E6%9C%89%E5%8E%9F%E6%A0%B9"><span class="toc-number">1.4.1.</span> <span class="toc-text">用例子验证：哪些数有原根？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E5%8E%9F%E6%A0%B9%E7%9A%84-%E5%B0%8F%E8%84%BE%E6%B0%94%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E6%80%A7%E8%B4%A8%E5%A4%A7%E7%99%BD%E8%AF%9D%E7%89%88"><span class="toc-number">1.5.</span> <span class="toc-text">四、原根的 “小脾气”：几个重要性质（大白话版）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#41-%E4%B8%80%E4%B8%AA%E6%95%B0%E7%9A%84%E5%8E%9F%E6%A0%B9%E4%B8%8D%E6%AD%A2%E4%B8%80%E4%B8%AA%E5%A6%82%E6%9E%9C%E6%9C%89%E7%9A%84%E8%AF%9D"><span class="toc-number">1.5.1.</span> <span class="toc-text">4.1 一个数的原根不止一个（如果有的话）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#42-%E5%8E%9F%E6%A0%B9%E7%9A%84-%E5%B9%82%E6%AC%A1-%E4%B9%9F%E8%83%BD%E5%BD%93%E5%8E%9F%E6%A0%B9"><span class="toc-number">1.5.2.</span> <span class="toc-text">4.2 原根的 “幂次” 也能当原根</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#43-%E5%8E%9F%E6%A0%B9%E7%9A%84%E5%B9%82%E6%AC%A1%E6%9C%89-%E5%91%A8%E6%9C%9F%E6%80%A7"><span class="toc-number">1.5.3.</span> <span class="toc-text">4.3 原根的幂次有 “周期性”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-%E6%80%8E%E4%B9%88%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%95%B0%E6%98%AF%E4%B8%8D%E6%98%AF%E5%8E%9F%E6%A0%B9%E5%88%A4%E5%AE%9A%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.</span> <span class="toc-text">五、怎么判断一个数是不是原根？（判定方法）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E5%AE%9A%E6%AD%A5%E9%AA%A4%E4%BB%A5%E5%88%A4%E6%96%AD-a-%E6%98%AF%E4%B8%8D%E6%98%AF-m-%E7%9A%84%E5%8E%9F%E6%A0%B9%E4%B8%BA%E4%BE%8B"><span class="toc-number">1.6.1.</span> <span class="toc-text">判定步骤（以判断 a 是不是 m 的原根为例）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%B8%AA%E4%BE%8B%E5%AD%90%E5%88%A4%E6%96%AD-2-%E6%98%AF%E4%B8%8D%E6%98%AF-9-%E7%9A%84%E5%8E%9F%E6%A0%B9"><span class="toc-number">1.6.2.</span> <span class="toc-text">举个例子：判断 2 是不是 9 的原根？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD-%E5%8E%9F%E6%A0%B9%E6%9C%89%E5%95%A5%E7%94%A8%E5%AE%9E%E9%99%85%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">1.7.</span> <span class="toc-text">六、原根有啥用？（实际应用场景）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#61-%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BF%9D%E6%8A%A4%E4%BD%A0%E7%9A%84%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8"><span class="toc-number">1.7.1.</span> <span class="toc-text">6.1 密码学：保护你的信息安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#62-%E7%AE%80%E5%8C%96%E6%95%B0%E8%AE%BA%E8%AE%A1%E7%AE%97"><span class="toc-number">1.7.2.</span> <span class="toc-text">6.2 简化数论计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#63-%E7%94%9F%E6%88%90%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-number">1.7.3.</span> <span class="toc-text">6.3 生成伪随机数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-%E5%B0%8F%E7%99%BD%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E7%AD%94"><span class="toc-number">1.8.</span> <span class="toc-text">七、小白常见问题解答</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.9.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/33641/" title="博客使用指南"><img src="/img/posts/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="博客使用指南"/></a><div class="content"><a class="title" href="/posts/33641/" title="博客使用指南">博客使用指南</a><time datetime="2026-11-08T05:01:27.769Z" title="发表于 2026-11-08 05:01:27">2026-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/14549/" title="英语考点全解析"><img src="/img/posts/%E8%8B%B1%E8%AF%AD.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="英语考点全解析"/></a><div class="content"><a class="title" href="/posts/14549/" title="英语考点全解析">英语考点全解析</a><time datetime="2026-11-08T05:01:27.769Z" title="发表于 2026-11-08 05:01:27">2026-11-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/16107/" title="Hello World">Hello World</a><time datetime="2026-11-08T05:01:27.766Z" title="发表于 2026-11-08 05:01:27">2026-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/55046/" title="C++ 动态规划"><img src="/img/posts/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ 动态规划"/></a><div class="content"><a class="title" href="/posts/55046/" title="C++ 动态规划">C++ 动态规划</a><time datetime="2026-11-08T05:01:27.765Z" title="发表于 2026-11-08 05:01:27">2026-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/44345/" title="C++ 最大子矩形问题"><img src="/img/posts/%E6%9C%80%E5%A4%A7%E5%AD%90%E7%9F%A9%E5%BD%A2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ 最大子矩形问题"/></a><div class="content"><a class="title" href="/posts/44345/" title="C++ 最大子矩形问题">C++ 最大子矩形问题</a><time datetime="2026-11-08T05:01:27.765Z" title="发表于 2026-11-08 05:01:27">2026-11-08</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/guangzhoueven" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><img class="footer_mini_logo" title="返回顶部" alt="返回顶部" onclick="anzhiyu.scrollToDest(0, 500)" src="/img/logo.png" size="50px"/><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/3493075773032663" title="Bilibili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div><div id="anzhiyu-footer"><div class="footer-group"><div class="footer-title">导航</div><div class="footer-links"><a class="footer-item" title="文章" href="/archives/">文章</a><a class="footer-item" title="分类" href="/categories/">分类</a><a class="footer-item" title="标签" href="/tags/">标签</a></div></div><div class="footer-group"><div class="footer-title">协议</div><div class="footer-links"><a class="footer-item" title="隐私政策" href="/privacy/">隐私政策</a><a class="footer-item" title="版权协议" href="/copyright/">版权协议</a><a class="footer-item" title="Cookie" href="/cookies/">Cookie</a></div></div><div class="footer-group"><div class="footer-title-group"><div class="footer-title">友链</div><a class="random-friends-btn" id="footer-random-friends-btn" href="javascript:addFriendLinksInFooter();" title="换一批友情链接"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right"></i></a></div><div class="footer-links" id="friend-links-in-footer"></div></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2025 - 2026 By <a class="footer-bar-link" href="/" title="guangzhou_even" target="_blank">guangzhou_even</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" href="/atom.xml" title="RSS">RSS</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20256363" title="萌ICP备20256363号">萌ICP备20256363号</a><a class="footer-bar-link cc" href="/copyright" title="CC协议"><i class="anzhiyufont anzhiyu-icon-copyright-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-by-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nc-line"></i><i class="anzhiyufont anzhiyu-icon-creative-commons-nd-line"></i></a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">19</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">作者网站</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.gzeven.cc.cd/" title="主页"><img class="back-menu-item-icon" src="/img/logo.png" alt="主页"/><span class="back-menu-item-text">主页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://nav.gzeven.cc.cd/" title="起始页"><img class="back-menu-item-icon" src="/img/box/nav.png" alt="起始页"/><span class="back-menu-item-text">起始页</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://hot.gzeven.cc.cd/" title="今日热榜"><img class="back-menu-item-icon" src="/img/box/hot.png" alt="今日热榜"/><span class="back-menu-item-text">今日热榜</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://surf.gzeven.cc.cd/" title="SURF"><img class="back-menu-item-icon" src="/img/box/surf.png" alt="SURF"/><span class="back-menu-item-text">SURF</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://catch-cat.gzeven.cc.cd/" title="抓住那只猫"><img class="back-menu-item-icon" src="/img/box/catch-cat.png" alt="抓住那只猫"/><span class="back-menu-item-text">抓住那只猫</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://tafang.gzeven.cc.cd/" title="塔防"><img class="back-menu-item-icon" src="/img/box/tafang.png" alt="塔防"/><span class="back-menu-item-text">塔防</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://minesweeper.gzeven.cc.cd/" title="扫雷"><img class="back-menu-item-icon" src="/img/box/minesweeper.png" alt="扫雷"/><span class="back-menu-item-text">扫雷</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://boxel.gzeven.cc.cd/" title="Boxel"><img class="back-menu-item-icon" src="/img/box/boxel.png" alt="Boxel"/><span class="back-menu-item-text">Boxel</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://tetris.gzeven.cc.cd/" title="俄罗斯方块"><img class="back-menu-item-icon" src="/img/box/tetris.png" alt="俄罗斯方块"/><span class="back-menu-item-text">俄罗斯方块</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://restart.gzeven.cc.cd/" title="人生重开模拟器"><img class="back-menu-item-icon" src="/img/box/people.png" alt="人生重开模拟器"/><span class="back-menu-item-text">人生重开模拟器</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://wuziqi.gzeven.cc.cd/" title="五子棋"><img class="back-menu-item-icon" src="/img/box/wuziqi.png" alt="五子棋"/><span class="back-menu-item-text">五子棋</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://fireworks.gzeven.cc.cd/" title="烟花"><img class="back-menu-item-icon" src="/img/box/fireworks.png" alt="烟花"/><span class="back-menu-item-text">烟花</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://markdown.gzeven.cc.cd/" title="Markdown"><img class="back-menu-item-icon" src="/img/box/Markdown.png" alt="Markdown"/><span class="back-menu-item-text">Markdown</span></a><a class="back-menu-item" target="_blank" rel="noopener" href="https://oitrainer.gzeven.cc.cd/start" title="OI教练模拟器"><img class="back-menu-item-icon" src="/img/box/oitrainer.png" alt="OI教练模拟器"/><span class="back-menu-item-text">OI教练模拟器</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/"><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文库</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="fa-fw fas fa-folder-open faa-tada"></i><span> 文章列表</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="fa-fw fas fa-tags faa-tada"></i><span> 全部标签</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="fa-fw fas fa-folder faa-tada"></i><span> 全部分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/essay/"><i class="fa-fw fas fa-book faa-tada"></i><span> 即刻短文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 工具</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/tools/status/"><i class="fa-fw fas fa-refresh faa-tada"></i><span> 站点监测</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tools/recentcomment/"><i class="fa-fw fas fa-list faa-tada"></i><span> 最近评论</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tools/kongtiao/"><i class="fa-fw fas fa-window-maximize faa-tada"></i><span> 空调</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tools/ziliao/"><i class="fa-fw fas fa-book faa-tada"></i><span> 资料</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tools/website/"><i class="fa-fw fas fa-list faa-tada"></i><span> 网站</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/message/"><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 友链</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/links/"><i class="fa-fw fas fa-link faa-tada"></i><span> 友情链接</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/oj/"><i class="fa-fw fas fa-list faa-tada"></i><span> 编程OJ</span></a></li></ul></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/about/"><span> 关于</span></a></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/C/" style="font-size: 0.88rem;">C++<sup>11</sup></a><a href="/tags/%E4%B8%AD%E8%80%83/" style="font-size: 0.88rem;">中考<sup>1</sup></a><a href="/tags/%E5%88%9D%E4%B8%AD/" style="font-size: 0.88rem;">初中<sup>2</sup></a><a href="/tags/%E5%8D%9A%E5%BC%88/" style="font-size: 0.88rem;">博弈<sup>1</sup></a><a href="/tags/%E5%A5%A5%E6%95%B0/" style="font-size: 0.88rem;">奥数<sup>1</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B/" style="font-size: 0.88rem;">编程<sup>11</sup></a><a href="/tags/%E8%8B%B1%E8%AF%AD/" style="font-size: 0.88rem;">英语<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="anzhiyufont anzhiyu-icon-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="algolia-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="anzhiyufont anzhiyu-icon-xmark"></i></button></nav><div class="search-wrap"><div id="algolia-search-input"></div><hr/><div id="algolia-search-results"><div id="algolia-hits"></div><div id="algolia-pagination"></div><div id="algolia-info"><div class="algolia-stats"></div><div class="algolia-poweredBy"></div></div></div></div></div><div id="search-mask"></div></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox/fancybox.umd.js"></script><script src="/pluginsSrc/instant.page/instantpage.js" type="module"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2025 By 安知鱼 V1.7.1",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 guangzhou_even 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><script src="/pluginsSrc/algoliasearch/dist/algoliasearch-lite.umd.js"></script><script src="/pluginsSrc/instantsearch.js/dist/instantsearch.production.min.js"></script><script src="/js/search/algolia.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="/pluginsSrc/katex/dist/katex.min.css"><script src="/pluginsSrc/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    anzhiyu.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>(() => {
+  const $mermaid = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaid.length === 0) return
+  const runMermaid = () => {
+    window.loadMermaid = true
+    const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+    Array.from($mermaid).forEach((item, index) => {
+      const mermaidSrc = item.firstElementChild
+      const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+      const mermaidID = 'mermaid-' + index
+      const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+
+      const renderFn = mermaid.render(mermaidID, mermaidDefinition)
+
+      const renderV10 = () => {
+        renderFn.then(({svg}) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svg)
+        })
+      }
+
+      const renderV9 = svg => {
+        mermaidSrc.insertAdjacentHTML('afterend', svg)
+      }
+
+      typeof renderFn === 'string' ? renderV9(renderFn) : renderV10()
+    })
+  }
+
+  const loadMermaid = () => {
+    window.loadMermaid ? runMermaid() : getScript('/pluginsSrc/mermaid/dist/mermaid.min.js').then(runMermaid)
+  }
+
+  anzhiyu.addGlobalFn('themeChange', runMermaid, 'mermaid')
+
+  window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+})()</script><script>(() => {
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.gzeven.cc.cd/',
+      region: '',
+      onCommentLoaded: () => {
+        anzhiyu.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(runFn,0)
+    else getScript('/pluginsSrc/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.gzeven.cc.cd/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const runFn = () => {
+    init();
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) anzhiyu.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else {
+      loadTwikoo()
+    }
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script><input type="hidden" name="page-type" id="page-type" value="post"></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://twikoo.gzeven.cc.cd/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('/pluginsSrc/twikoo/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'><div class='name'><span>${array[i].nick} </span></div></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <time datetime="${array[i].date}">${anzhiyu.diffDate(array[i].date, true)}</time></div>
+        </div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><script async data-pjax src="/pluginsSrc/anzhiyu-theme-static/waterfall/waterfall.js"></script><script src="/pluginsSrc/qrcodejs/qrcode.min.js"></script><link rel="stylesheet" href="/pluginsSrc/anzhiyu-theme-static/icon/ali_iconfont_css.css"><script src="/js/chinese-lunar.js"></script><script async src="/schedule/schedule.js"></script><script async src="/js/diytitle.js"></script><script defer src="/pluginsSrc/jquery/dist/jquery.min.js"></script><script defer src="/pluginsSrc/hexo-theme-volantis/source/js/issues.js"></script><link rel="stylesheet" href="/pluginsSrc/anzhiyu-theme-static/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/anzhiyu-blog-static/js/APlayer.min.js"></script><script src="/pluginsSrc/hexo-anzhiyu-music/assets/js/Meting2.min.js"></script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="/pluginsSrc/anzhiyu-theme-static/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div><!-- hexo injector body_end start --><script async src="/js/ali-iconfont.js"></script><!-- hexo injector body_end end --></body></html>

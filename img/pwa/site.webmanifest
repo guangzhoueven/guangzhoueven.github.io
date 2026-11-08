@@ -1,0 +1,40 @@
+{
+  "name": "guangzhou_even's Blog",
+  "short_name": "Blog",
+  "description": "分享技术与科技生活",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#18171D",
+  "theme_color": "#ffc848",
+  "icons": [
+    {
+      "src": "/img/pwa/favicon_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/pwa/favicon_512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/img/pwa/pc.jpg",
+      "sizes": "1920x854",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "博客首页 - 桌面端截图"
+    },
+    {
+      "src": "/img/pwa/iphone.jpg",
+      "sizes": "323x700",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "博客首页 - 移动端截图"
+    }
+  ]
+}
